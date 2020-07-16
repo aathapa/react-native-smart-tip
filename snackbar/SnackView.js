@@ -227,7 +227,7 @@ class SnackView extends Component {
             this.hideAnimated.stop()
             this.hideAnimated = undefined
         }
-        this.props.onHideSnackBar();
+        if (this.props.onHideSnackBar) this.props.onHideSnackBar();
 
 
         Dimensions.removeEventListener('change', this.onWindowChange);
