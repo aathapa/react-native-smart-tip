@@ -1,15 +1,15 @@
-import { ReactNode,Component } from 'react';
+import { ReactNode, Component } from 'react';
 import { Animated } from 'react-native';
 
 export interface IToastOpts {
-  data: string;
-  duration?: number;
-  position?: number;
-  inEasing?: (value: number) => number;
-  textColor?: string;
-  backgroundColor?: string;
-  icon?: ReactNode;
-  isShowShadow?: boolean
+	data: string;
+	duration?: number;
+	position?: number;
+	inEasing?: (value: number) => number;
+	textColor?: string;
+	backgroundColor?: string;
+	icon?: ReactNode;
+	isShowShadow?: boolean
 }
 
 export class WToast {
@@ -27,20 +27,21 @@ export class WToast {
 }
 
 export interface ISnackBarOpts {
-  data: string;
-  statusBarHeight?: number;
-  height?: number;
-  duration?: number;
-  position?: number;
-  inEasing?: (value: number) => number;
-  textColor?: string;
-  backgroundColor?: string;
-  actionText?: string;
-  actionTextColor?: string;
-  isAllowSlideExit?: boolean;
-  onActionHide?: (isSlideHide: boolean) => void;
-  isShowShadow?: boolean;
-  numberOfLines?: number;
+	data: string;
+	statusBarHeight?: number;
+	height?: number;
+	duration?: number;
+	position?: number;
+	inEasing?: (value: number) => number;
+	textColor?: string;
+	backgroundColor?: string;
+	actionText?: string;
+	actionTextColor?: string;
+	isAllowSlideExit?: boolean;
+	onActionHide?: (isSlideHide: boolean) => void;
+	onHideSnackBar?: () => void;
+	isShowShadow?: boolean;
+	numberOfLines?: number;
 }
 
 export class WSnackBar {
@@ -63,7 +64,7 @@ export interface IModalOpts {
 	inEasing?: (value: number) => number;
 	textColor?: string;
 	backgroundColor?: string;
-	icon?:ReactNode
+	icon?: ReactNode
 	onRequestClose?: () => void;
 }
 
@@ -78,13 +79,13 @@ export class WModal {
 	};
 }
 
-const toastInstance = (opt: IToastOpts) => {}
+const toastInstance = (opt: IToastOpts) => { }
 
 export interface IModalShowToastProps {
-  toastInstance: (func: any) => toastInstance;
+	toastInstance: (func: any) => toastInstance;
 }
 
-export class WModalShowToastView extends Component<IModalShowToastProps> {} 
+export class WModalShowToastView extends Component<IModalShowToastProps> { }
 
-export {WModal, WSnackBar, WToast, WModalShowToastView};
+export { WModal, WSnackBar, WToast, WModalShowToastView };
 
